@@ -1,97 +1,94 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# 🌤️ React Native Weather App
 
-# Getting Started
+A simple React Native app (built with TypeScript) that fetches and displays current weather information for a searched city, using the WeatherAPI.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+---
 
-## Step 1: Start Metro
+## 📱 Features
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+✅ Search for a city and display:
+- City name  
+- Current temperature  
+- Weather condition (e.g., Cloudy, Sunny)  
+- Weather icon  
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+✅ Show an error if the city is not found.
 
-```sh
-# Using npm
-npm start
+✅ Persist the last searched city using AsyncStorage and auto-load it when the app starts.
 
-# OR using Yarn
-yarn start
+✅ State management using **Redux Toolkit** (without Redux Saga).
+
+✅ Built for both **iOS** and **Android**.
+
+---
+
+## 🏗️ Setup Instructions
+
+### 1️⃣ Clone the repo
+
+```bash
+git clone <your-repo-url> / download and extract zip
+cd WeatherApp
 ```
 
-## Step 2: Build and run your app
+### 2️⃣ Install dependencies
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
-
-### Android
-
-```sh
-# Using npm
-npm run android
-
-# OR using Yarn
-yarn android
+```bash
+npm install
 ```
 
-### iOS
+### 3️⃣ Set up WeatherAPI key
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
+- Go to [https://www.weatherapi.com/](https://www.weatherapi.com/) and sign up for a free account.
+- Get your API key.
+- In `src/services/weatherService.ts`, replace:
+  
+```ts
+const API_KEY = 'YOUR_API_KEY';
 ```
 
-Then, and every time you update your native dependencies, run:
+with your actual key.
 
-```sh
-bundle exec pod install
+---
+
+### 4️⃣ Run the app
+
+For iOS:
+```bash
+npx pod-install
+npx react-native run-ios
 ```
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
-
-```sh
-# Using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
+For Android:
+```bash
+npx react-native run-android
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+---
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+## 🏛️ Project Structure
 
-## Step 3: Modify your app
+```
+/src
+  /components       → Reusable UI components
+  /screens          → App screens (e.g., HomeScreen)
+  /slices           → Redux Toolkit slices
+  /services         → API calls and external services
+  /store            → Redux store setup
+```
 
-Now that you have successfully run the app, let's make changes!
+---
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+## ⚙️ Architectural Decisions
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+- **Redux Toolkit**: Simplifies state management, avoids boilerplate, and integrates `createAsyncThunk` for async API calls.
+- **AsyncStorage**: Stores the last searched city persistently.
+- **TypeScript**: Provides type safety across components, slices, and API services.
+- **WeatherAPI**: Chosen for its clear API and free tier.
+- **No Redux Saga**: We used `createAsyncThunk` for simplicity, avoiding the extra complexity of saga middleware.
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+---
 
-## Congratulations! :tada:
+## 🧪 Testing
 
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+- Unit tests can be added using **Jest** and **React Native Testing Library** (optional for the task).
