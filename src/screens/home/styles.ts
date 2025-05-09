@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import {StyleSheet} from 'react-native';
 
 const Styles = StyleSheet.create({
   // Light Mode Styles
@@ -174,6 +174,12 @@ const Styles = StyleSheet.create({
   toggleButtonTextDark: {
     color: '#fff',
     fontSize: 16,
+  },
+  placeholderLight: {
+    color: '#555',
+  },
+  placeholderDark: {
+    color: '#ccc',
   },
 });
 
