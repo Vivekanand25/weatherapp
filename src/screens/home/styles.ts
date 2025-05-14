@@ -28,7 +28,7 @@ const Styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#ccc',
     padding: 10,
-    width: '70%',
+    width: '100%',
     borderRadius: 10,
     marginRight: 10,
     backgroundColor: '#f9f9f9',
@@ -117,7 +117,7 @@ const Styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#444',
     padding: 10,
-    width: '70%',
+    width: '100%',
     borderRadius: 10,
     marginRight: 10,
     backgroundColor: '#555',
@@ -181,6 +181,36 @@ const Styles = StyleSheet.create({
   placeholderDark: {
     color: '#ccc',
   },
+  autocompleteContainer: {
+    flex: 1,
+  },
+  suggestionItemLight: {
+    padding: 10,
+    backgroundColor: '#fff',
+    borderBottomColor: '#ccc',
+    borderBottomWidth: 1,
+  },
+  suggestionItemDark: {
+    padding: 10,
+    backgroundColor: '#1e1e1e',
+    borderBottomColor: '#444',
+    borderBottomWidth: 1,
+  },
+  suggestionTextLight: {
+    color: '#000',
+  },
+  suggestionTextDark: {
+    color: '#fff',
+  },
+  listContainerStyleDark: {
+    zIndex: 1,
+    backgroundColor: '#333',
+  },
+  listContainerStyleLight: {
+    zIndex: 1,
+    backgroundColor: '#333',
+  },
+  autocompleteContainerStyle: {width: '100%'},
 });
 
 export default Styles;
