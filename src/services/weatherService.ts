@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_KEY = 'fac1a78b752a4bec91d63642250105';
+const API_KEY = '34b88c4dc16e4fdcb9144819251605';
 const BASE_URL = 'https://api.weatherapi.com/v1';
 
 export const fetchWeatherByCity = async (city: string) => {
