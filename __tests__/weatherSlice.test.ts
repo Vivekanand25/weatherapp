@@ -2,7 +2,7 @@ import weatherReducer, {
   showModal,
   hideModal,
   toggleDarkMode,
-} from '../slices/weatherSlice';
+} from '../src/slices/weatherSlice';
 
 const initialState = {
   city: '',

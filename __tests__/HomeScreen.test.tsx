@@ -1,6 +1,6 @@
 import React from 'react';
 import {render} from '@testing-library/react-native';
-import HomeScreen from '../screens/home/HomeScreen';
+import HomeScreen from '../src/screens/home/HomeScreen';
 import {Provider} from 'react-redux';
 import configureStore from 'redux-mock-store';
 

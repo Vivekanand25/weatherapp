@@ -1,6 +1,6 @@
 import React from 'react';
 import {render} from '@testing-library/react-native';
-import ErrorModal from '../components/ErrorModal';
+import ErrorModal from '../src/components/ErrorModal';
 import {Provider} from 'react-redux';
 import configureStore from 'redux-mock-store';
 

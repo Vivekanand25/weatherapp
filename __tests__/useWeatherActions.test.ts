@@ -1,6 +1,6 @@
 import React from 'react';
 import {renderHook, act} from '@testing-library/react-native';
-import {useWeatherActions} from '../hooks/useWeatherActions';
+import {useWeatherActions} from '../src/hooks/useWeatherActions';
 import {Provider} from 'react-redux';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
