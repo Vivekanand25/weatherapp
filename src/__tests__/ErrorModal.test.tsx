@@ -1,7 +1,7 @@
 import React from 'react';
-import { render } from '@testing-library/react-native';
+import {render} from '@testing-library/react-native';
 import ErrorModal from '../components/ErrorModal';
-import { Provider } from 'react-redux';
+import {Provider} from 'react-redux';
 import configureStore from 'redux-mock-store';
 
 const mockStore = configureStore([]);
@@ -17,10 +17,10 @@ describe('ErrorModal', () => {
       },
     });
 
-    const { getByText } = render(
+    const {getByText} = render(
       <Provider store={store}>
         <ErrorModal />
-      </Provider>
+      </Provider>,
     );
 
     expect(getByText('Error')).toBeTruthy();

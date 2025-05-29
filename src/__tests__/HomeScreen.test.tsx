@@ -1,7 +1,7 @@
 import React from 'react';
-import { render } from '@testing-library/react-native';
+import {render} from '@testing-library/react-native';
 import HomeScreen from '../screens/home/HomeScreen';
-import { Provider } from 'react-redux';
+import {Provider} from 'react-redux';
 import configureStore from 'redux-mock-store';
 
 const mockStore = configureStore([]);
@@ -24,10 +24,10 @@ describe('HomeScreen', () => {
       },
     });
 
-    const { getByPlaceholderText } = render(
+    const {getByPlaceholderText} = render(
       <Provider store={store}>
         <HomeScreen />
-      </Provider>
+      </Provider>,
     );
 
     expect(getByPlaceholderText('Enter city name')).toBeTruthy();
